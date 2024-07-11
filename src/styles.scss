@@ -1,4 +1,143 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Poppins, "Helvetica Neue", sans-serif; 
+    background-image: url('./assets/Images/coat.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+}
+
+// Sizes
+.full-width {
+    width: 100%;
+}
+
+.half-width {
+    width: 50%;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.full-height2 {
+    height: 100vh;
+}
+
+.half-height {
+    height: 50%;
+}
+
+// flex
+.flex {
+    display: flex;
+}
+
+.row {
+    flex-direction: row;
+}
+
+// flex-layout
+.center-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.space-between-center {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-center {
+    align-items: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.no-wrap {
+    flex-wrap: nowrap;
+}
+
+// Padding 
+.no-padding {
+    padding: 0;
+}
+
+.padding-5px {
+    padding: 5px;
+}
+
+.padding-10px {
+    padding: 10px;
+}
+
+.padding-20px {
+    padding: 20px;
+}
+
+// margin
+.no-margin {
+    margin: 0;
+}
+
+.margin-10px {
+    margin: 10px;
+}
+
+// gaps 
+.gap-05em {
+    gap: .5em;
+}
+
+.gap-1em {
+    gap: 1em;
+}
+
+.gap-2em {
+    gap: 2em;
+}
+
+// postions 
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+// cursor 
+.pointer {
+    cursor: pointer;
+}
+
+// border 
+.border-radius-10px {
+    border-radius: 10px;
+}
+
+.border-radius-20px {
+    border-radius: 20px;
+}
+
+.round {
+    border-radius: 50%;
+}
+
+.border-box {
+    box-sizing: border-box;
+}
+
+.container {
+    opacity: 0.9;
+}
+
+

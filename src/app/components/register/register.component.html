@@ -1,1 +1,61 @@
-<p>register works!</p>
+<mat-card class="full-width full-height2 center-center flex column container">
+    <h3>Register</h3>
+    <form [formGroup]="registerForm">
+        <div class="flex row wrap padding-10px border-box">
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Enter First Name</mat-label>
+                <input matInput placeholder="Joe" formControlName="firstName" required>
+                <mat-error *ngIf="registerForm.get('firstName')?.hasError('required')">
+                    First Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Enter Last Name</mat-label>
+                <input matInput placeholder="Doe" formControlName="lastName" required>
+                <mat-error *ngIf="registerForm.get('lastName')?.hasError('required')">
+                    Last Name is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>ID</mat-label>
+                <input matInput type="text" formControlName="ID" placeholder="9801115169080" required
+                    (blur)="IdValid()" maxlength="13">
+                <mat-error *ngIf="registerForm.get('ID')?.hasError('required')">
+                    ID Number is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Date Of Birth</mat-label>
+                <input matInput type="string" formControlName="DOB"
+                    [value]="(year && month && day) ? year + '/' + month + '/' + day : ''" readonly>
+                <mat-error *ngIf="registerForm.get('DOB')?.hasError('required')">
+                    Date Of Birth is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Citizenship</mat-label>
+                <input type="text" matInput formControlName="citizenship" placeholder="South African"
+                    [value]="citizen" readonly>
+                <mat-error *ngIf="registerForm.get('citizenship')?.hasError('required')">
+                    Citizenship is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Gender</mat-label>
+                <input type="text" matInput formControlName="gender" placeholder="Male/Female"
+                    [value]="gender" readonly>
+                <mat-error *ngIf="registerForm.get('gender')?.hasError('required')">
+                    Gender is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <!-- <p>
+                <mat-checkbox [formControl]="disableSelect">Disable select</mat-checkbox>
+              </p> -->
+        </div>
+        <div class="flex center-center gap-1em row">
+        <button mat-raised-button color="primary" (click)="submit()" [disabled]="registerForm.invalid">Submit</button>
+        <button mat-raised-button color="warn">Cancel</button>
+        </div>
+    </form>
+    
+</mat-card>
