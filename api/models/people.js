@@ -28,4 +28,3 @@ const people = mongoose.Schema ({
 })
 
 module.exports = mongoose.model('People', people)
-// module.exports = mongoose.model('files', File)

@@ -2,13 +2,6 @@
 const express = require('express')
 const app = express()
 
-// Routes
-const routes = require('./routes/people')
-
-// middleware
-app.use(express.json())
-app.use(routes)
-
 // cors
 const cors = require('cors')
 const corsOption = {
@@ -16,6 +9,14 @@ const corsOption = {
     optionSuccessStatus: 200
 }
 app.use(cors(corsOption))
+
+// middleware
+app.use(express.json())
+
+// Routes
+const routes = require('./routes/people')
+app.use(routes)
+
 
 // ENV
 const dotenv = require('dotenv')

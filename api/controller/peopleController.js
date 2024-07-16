@@ -19,7 +19,6 @@ module.exports = {
             const hashPassword = await brcypt.hash(req.body.password, salt)
 
             const payload = { ...req.body };
-            // payload['fileId'] = pictureId;
             payload.password = hashPassword
             const newPerson = new People(payload)
             const result = await newPerson.save()
@@ -28,10 +27,13 @@ module.exports = {
                     name: "Kgothatso Theko",
                     address: "kgothatsotheko7@gmail.com"
                 },
-                to: payload.toString(),
-                subject: "New Account Created",
+                to: payload.email.toString(),
+                subject: "RSA Virtualization Profile Created",
                 text: "Account successfully created",
-                html: `<b>Your profile has successfully been created. Awaiting Verification.</b>`,
+                html:`<h3>Welcome ${payload.firstName.toString()},</h3>
+                <blockquote>Your profile has successfully been created. Awaiting verification and vaildating your information with South African Government Department of Home Affairs (DHA) and Transport.</blockquote><br/>
+                <footer> KTK Virtualization™️. All rights reserved.</footer>
+                `,
             };
             sendMail(mailOptions);
             res.status(201).send(result)

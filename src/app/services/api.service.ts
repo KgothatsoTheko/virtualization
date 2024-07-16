@@ -11,7 +11,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   genericPost(endpoint:any, body:any) {
-    this.http.post(this.serverUrl + endpoint, body)
+    return this.http.post(this.serverUrl + endpoint, body)
   }
 
   genericGet(endpoint: string){

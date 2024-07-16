@@ -102,20 +102,16 @@ export class RegisterComponent {
   }
 
   submit() {
-
-    // if(this.registerForm.valid) {
       
-    //   this.api.genericPost('/register', this.registerForm.value).subscribe({
-    //     next: (res: any) => {
-    //       console.log("response", res);
-    //     },
-    //     error: (err: any) => console.log("error", err),
-    //     complete: () => { console.log("Request complete") }
-    //   });
-    // } 
-
-
+      this.api.genericPost('/register', this.registerForm.value).subscribe({
+        next: (res: any) => {
+          console.log("response", res);
+        },
+        error: (err: any) => console.log("error", err),
+        complete: () => { console.log("Request complete") }
+      });
     
+
   }
   
   
