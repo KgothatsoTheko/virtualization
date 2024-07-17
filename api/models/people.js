@@ -9,22 +9,27 @@ const File = new mongoose.Schema({
     length: { type: Number, required: true }
 })
 
-const people = mongoose.Schema ({
-    firstName: {type: String},
-    lastName: {type: String},
-    idNumber: {type: String, required:true},
-    dateOfBirth: {type: String},
-    age: {type: Number},
-    citizenship: {type: String},
-    gender: {type: String},
+const License = new mongoose.Schema({
     licenseNumber: {type: String},
     valid: {type: String},
     issued: {type: String},
     code: {type: String},
     vehicleRestriction: {type: Number},
-    firstIssue: {type: String},
-    email: {type: String, required: true, unique: true},
-    password: {type: String, required: false,},
+    firstIssued: {type: String},
+})
+
+const people = mongoose.Schema ({
+    fullForeName: {type: String},
+    lastName: {type: String},
+    idNumber: {type: String, required:false},
+    dateOfBirth: {type: String},
+    age: {type: Number},
+    citizenship: {type: String},
+    gender: {type: String},
+    license: License,
+    email: {type: String, required: false, unique: true},
+    password: {type: String, required: false},
+    file: File,
 })
 
 module.exports = mongoose.model('People', people)
